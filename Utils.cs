@@ -1,13 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace PES5_WE9_LE_GDB_Manager
 {
     public static class Utils
     {
+        public static uint ReadUInt32FromByteArray(byte[] data, uint startIndex)
+        {
+            uint value = (uint)(data[startIndex] | (data[startIndex + 1] << 8) | (data[startIndex + 2] << 16) | (data[startIndex + 3] << 24));
+            return value;
+        }
+        public static uint ZeroFillRightShift(uint val, int n)
+        {
+            return (uint)((val % 0x100000000) >> n);
+        }
+
         public static string GetFilename()
         {
             string fileName = "";
