@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Windows.Forms;
 
 namespace PES5_WE9_LE_GDB_Manager
@@ -26,6 +25,7 @@ namespace PES5_WE9_LE_GDB_Manager
                 Utils.ShowError("All items need to be selected before continue");
                 return;
             }
+            config = new GDBManagerConfig();
             config.ExePath = exePath;
             config.GDBFolderPath = gdbFolderPath;
             config.OFPath = ofPath;
