@@ -573,7 +573,7 @@ namespace PES5_WE9_LE_GDB_Manager
                     sw.WriteLine();
                     sw.WriteLine("# End of map");
                 }
-                            }
+            }
 
         }
         public void WriteSupporterFlagsMap()
