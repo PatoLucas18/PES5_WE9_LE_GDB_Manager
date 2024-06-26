@@ -381,8 +381,8 @@ namespace PES5_WE9_LE_GDB_Manager
             // bannersMapToolStripMenuItem
             // 
             this.bannersMapToolStripMenuItem.Name = "bannersMapToolStripMenuItem";
-            this.bannersMapToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.bannersMapToolStripMenuItem.Text = "Banners map";
+            this.bannersMapToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.bannersMapToolStripMenuItem.Text = "Banners + supp col map";
             this.bannersMapToolStripMenuItem.Click += new System.EventHandler(this.bannersMapToolStripMenuItem_Click);
             // 
             // flagsMapToolStripMenuItem
