@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+
 namespace PES5_WE9_LE_GDB_Manager
 {
     public class OptionFile
@@ -656,23 +659,26 @@ namespace PES5_WE9_LE_GDB_Manager
             85,
             138,
         };
-        private static readonly uint lastKey = OFKey[OFKey.Length - 1];
-        private string fileLocation;
-        public byte[] data;
-        private string fileName;
+        private static readonly uint LastKey = OFKey[OFKey.Length - 1];
+        private string FileLocation;
+        public byte[] Data;
+        private string FileName;
+        public List<Player> Players = new List<Player>();
+        public List<Player> FreePlayers = new List<Player>();
 
         public OptionFile(string fileLocation)
         {
-            this.fileLocation = fileLocation;
+            this.FileLocation = fileLocation;
             ReadOptionFile();
+            ReadPlayers();
         }
 
         private void ReadOptionFile()
         {
-            byte[] fileContents = File.ReadAllBytes(fileLocation);
-            fileName = Path.GetFileName(fileLocation);
-            data = new byte[OFByteLength];
-            Array.Copy(fileContents, data, fileContents.Length);
+            byte[] fileContents = File.ReadAllBytes(FileLocation);
+            FileName = Path.GetFileName(FileLocation);
+            Data = new byte[OFByteLength];
+            Array.Copy(fileContents, Data, fileContents.Length);
             ConvertData();
             Decrypt();
         }
@@ -683,13 +689,10 @@ namespace PES5_WE9_LE_GDB_Manager
 
             for (int i = 0; i < OFByteLength; i++)
             {
-                data[i] = (byte)(data[i] ^ OFKeyPC[key]);
+                Data[i] = (byte)(Data[i] ^ OFKeyPC[key]);
 
-                if (key < 255)
-                {
-                    key++;
-                }
-                else
+                key++;
+                if (key == OFKeyPC.Length)
                 {
                     key = 0;
                 }
@@ -703,18 +706,62 @@ namespace PES5_WE9_LE_GDB_Manager
                 int k = 0;
                 for (uint a = OFBlock[i]; a < OFBlock[i] + OFBlockSize[i]; a += 4)
                 {
-                    uint c = Utils.ReadUInt32FromByteArray(data, a);
-                    uint p = c - OFKey[k] + lastKey ^ lastKey;
+                    uint c = Utils.ReadUInt32(Data, a);
+                    uint p = c - OFKey[k] + LastKey ^ LastKey;
                     uint val = 0x000000FF;
-                    data[a] = (byte)(p & val);
-                    data[(a + 1)] = (byte)(Utils.ZeroFillRightShift(p, 8) & val);
-                    data[(a + 2)] = (byte)(Utils.ZeroFillRightShift(p, 16) & val);
-                    data[(a + 3)] = (byte)(Utils.ZeroFillRightShift(p, 24) & val);
+                    Data[a] = (byte)(p & val);
+                    Data[(a + 1)] = (byte)(Utils.ZeroFillRightShift(p, 8) & val);
+                    Data[(a + 2)] = (byte)(Utils.ZeroFillRightShift(p, 16) & val);
+                    Data[(a + 3)] = (byte)(Utils.ZeroFillRightShift(p, 24) & val);
                     k++;
                     if (k == OFKey.Length)
                     {
                         k = 0;
                     }
+                }
+            }
+        }
+
+        private void ReadPlayers()
+        {
+            Players.Clear();
+            for (uint i = 1; i < Player.TotalPlayers; i++)
+            {
+                Players.Add(new Player(this, i));
+            }
+            for (uint i = Player.FirstEditedIdx; i < Player.FirstEditedIdx + Player.TotalEditedPlayers; i++)
+            {
+                Players.Add(new Player(this, i));
+            }
+        }
+
+        public void SetPlayersInTeam(List<Team> teams)
+        {
+            foreach (Team team in teams)
+            {
+                uint offset = team.TeamPlayersOffset();
+                if (offset != 0xffffffff)
+                {
+                    for (uint i = 0; i < team.PlayersInTeam; i++)
+                    {
+                        uint playerId = Utils.ReadUInt16(Data, offset + i * 2);
+                        Player player = Players.FirstOrDefault(p => p.Id == playerId);
+                        if (player != null)
+                        {
+                            player.IsFree = false;
+                            team.Players.Add(player);
+                        }
+                    }
+                }
+            }
+        }
+        public void SetFreePlayers()
+        {
+            foreach (Player player in Players)
+            {
+                if (player.IsFree)
+                {
+                    FreePlayers.Add(player);
                 }
             }
         }
