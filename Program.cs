@@ -19,7 +19,7 @@ namespace PES5_WE9_LE_GDB_Manager
 
             Utils.CheckForUpdates();
 
-            string configPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "PES5_WE9_LE_GDB_Manager.config");
+            string configPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "PES5_WE9_LE_GDB_Manager.json");
             if (File.Exists(configPath))
             {
                 GDBManagerConfig config = Utils.LoadConfiguration(configPath);

@@ -114,7 +114,7 @@ namespace PES5_WE9_LE_GDB_Manager
         }
         static public void SaveConfig(GDBManagerConfig config)
         {
-            string configPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "PES5_WE9_LE_GDB_Manager.config");
+            string configPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "PES5_WE9_LE_GDB_Manager.json");
             using (FileStream fs = new FileStream(configPath, FileMode.Create))
             {
                 var serializer = new DataContractJsonSerializer(typeof(GDBManagerConfig));
