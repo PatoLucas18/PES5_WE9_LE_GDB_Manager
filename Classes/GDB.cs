@@ -555,7 +555,7 @@ namespace PES5_WE9_LE_GDB_Manager
 
             });
 
-            string mapFilePath = GetGDBPath("flags\\map_new.txt");
+            string mapFilePath = GetGDBPath("flags\\map.txt");
 
             using (FileStream fs = new FileStream(mapFilePath, FileMode.Append, FileAccess.Write))
             using (StreamWriter sw = new StreamWriter(fs))
