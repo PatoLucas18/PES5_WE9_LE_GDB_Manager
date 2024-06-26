@@ -454,7 +454,9 @@ namespace PES5_WE9_LE_GDB_Manager
             catch (Exception ex)
             {
                 Utils.ShowError($"An error has ocurred while trying to save the configuration file\nError: {ex.Message}");
+                return;
             }
+            Utils.ShowInfo("Configuration file saved successfully");
         }
         private void saveALLToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1911,6 +1913,31 @@ namespace PES5_WE9_LE_GDB_Manager
                 return;
             }
             AddFromWav(workingDirectory, ref team.CallnameLoud, "Callnames");
+        }
+
+        private void helpToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+    "PES5/WE9/LE GDB Manager Help\n\n" +
+    "In case of having any doubts please go it https://github.com/moth1995/PES5_WE9_LE_GDB_Manager/wiki.\n\n",
+    "Help",
+    MessageBoxButtons.OK,
+    MessageBoxIcon.Information
+);
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+    "PES5/WE9/LE GDB Manager\n\n" +
+    "Version: 1.0.0\n\n" +
+    "Developed by: marqisspes5\n\n" +
+    "Description:\n" +
+    "PES5/WE9/LE GDB Manager is an application for managing the graphical database of Pro Evolution Soccer 5, Winning Eleven 9, and Winning Eleven 9 LE.\n\n",
+    "About",
+    MessageBoxButtons.OK,
+    MessageBoxIcon.Information
+);
         }
     }
 }

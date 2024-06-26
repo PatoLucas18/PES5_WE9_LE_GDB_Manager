@@ -353,28 +353,28 @@ namespace PES5_WE9_LE_GDB_Manager
             // kitsMapToolStripMenuItem
             // 
             this.kitsMapToolStripMenuItem.Name = "kitsMapToolStripMenuItem";
-            this.kitsMapToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kitsMapToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.kitsMapToolStripMenuItem.Text = "Kits map";
             this.kitsMapToolStripMenuItem.Click += new System.EventHandler(this.kitsMapToolStripMenuItem_Click);
             // 
             // homeBallMapToolStripMenuItem
             // 
             this.homeBallMapToolStripMenuItem.Name = "homeBallMapToolStripMenuItem";
-            this.homeBallMapToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.homeBallMapToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.homeBallMapToolStripMenuItem.Text = "Home balls map";
             this.homeBallMapToolStripMenuItem.Click += new System.EventHandler(this.homeBallMapToolStripMenuItem_Click);
             // 
             // stadiumsMapToolStripMenuItem
             // 
             this.stadiumsMapToolStripMenuItem.Name = "stadiumsMapToolStripMenuItem";
-            this.stadiumsMapToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.stadiumsMapToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.stadiumsMapToolStripMenuItem.Text = "Stadiums map";
             this.stadiumsMapToolStripMenuItem.Click += new System.EventHandler(this.stadiumsMapToolStripMenuItem_Click);
             // 
             // chantsMapToolStripMenuItem
             // 
             this.chantsMapToolStripMenuItem.Name = "chantsMapToolStripMenuItem";
-            this.chantsMapToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.chantsMapToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.chantsMapToolStripMenuItem.Text = "Chants map";
             this.chantsMapToolStripMenuItem.Click += new System.EventHandler(this.chantsMapToolStripMenuItem_Click);
             // 
@@ -388,28 +388,28 @@ namespace PES5_WE9_LE_GDB_Manager
             // flagsMapToolStripMenuItem
             // 
             this.flagsMapToolStripMenuItem.Name = "flagsMapToolStripMenuItem";
-            this.flagsMapToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.flagsMapToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.flagsMapToolStripMenuItem.Text = "Flags map";
             this.flagsMapToolStripMenuItem.Click += new System.EventHandler(this.flagsMapToolStripMenuItem_Click);
             // 
             // suppFlagsMapToolStripMenuItem
             // 
             this.suppFlagsMapToolStripMenuItem.Name = "suppFlagsMapToolStripMenuItem";
-            this.suppFlagsMapToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.suppFlagsMapToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.suppFlagsMapToolStripMenuItem.Text = "Supp flags map";
             this.suppFlagsMapToolStripMenuItem.Click += new System.EventHandler(this.suppFlagsMapToolStripMenuItem_Click);
             // 
             // callnamesMapToolStripMenuItem
             // 
             this.callnamesMapToolStripMenuItem.Name = "callnamesMapToolStripMenuItem";
-            this.callnamesMapToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.callnamesMapToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.callnamesMapToolStripMenuItem.Text = "Callnames map";
             this.callnamesMapToolStripMenuItem.Click += new System.EventHandler(this.callnamesMapToolStripMenuItem_Click);
             // 
             // allMapsToolStripMenuItem1
             // 
             this.allMapsToolStripMenuItem1.Name = "allMapsToolStripMenuItem1";
-            this.allMapsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.allMapsToolStripMenuItem1.Size = new System.Drawing.Size(202, 22);
             this.allMapsToolStripMenuItem1.Text = "All maps";
             this.allMapsToolStripMenuItem1.Click += new System.EventHandler(this.allMapsToolStripMenuItem1_Click);
             // 
@@ -473,19 +473,21 @@ namespace PES5_WE9_LE_GDB_Manager
             // helpToolStripMenuItem1
             // 
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.helpToolStripMenuItem1.Text = "Help";
+            this.helpToolStripMenuItem1.Click += new System.EventHandler(this.helpToolStripMenuItem1_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // searchForUpdatesToolStripMenuItem
             // 
             this.searchForUpdatesToolStripMenuItem.Name = "searchForUpdatesToolStripMenuItem";
-            this.searchForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.searchForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.searchForUpdatesToolStripMenuItem.Text = "Update";
             this.searchForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.searchForUpdatesToolStripMenuItem_Click);
             // 
