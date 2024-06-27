@@ -75,7 +75,9 @@ namespace PES5_WE9_LE_GDB_Manager
             try
             {
                 GithubApi githubApi = GetGithubApi();
-                if (Application.ProductVersion != githubApi.TagName)
+                Version currentVersion = new Version(Application.ProductVersion);
+                Version githubVersion = new Version(githubApi.TagName);
+                if (currentVersion.CompareTo(githubVersion) < 0)
                 {
                     DialogResult result = MessageBox.Show($"There's a new update version: {githubApi.TagName}, would you like to download it?", $"GDB Manager 5 Updater", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
