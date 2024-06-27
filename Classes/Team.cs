@@ -15,7 +15,7 @@ namespace PES5_WE9_LE_GDB_Manager
         public static readonly uint TotalClubs = 138;
         public static readonly uint ExtraTeams = 17;
         public static readonly uint TotalTeams = TotalNations + TotalClubs + ExtraTeams;
-        private readonly uint OfNameRecordSize = 48;
+        private readonly uint OfNameRecordSize = 49;
         public uint PlayersInTeam 
         {
             get 
@@ -80,17 +80,13 @@ namespace PES5_WE9_LE_GDB_Manager
         private string GetNameFromOF(OptionFile of)
         {
             uint offset = GetOFOffset();
-            byte[] nameBytes = new byte[OfNameRecordSize];
-            Array.Copy(of.Data, offset, nameBytes, 0, OfNameRecordSize);
 
-            int endIndex = Array.IndexOf(nameBytes, (byte)0x00, 0);
-            if (endIndex == -1)
+            string name = Utils.BytesUTF8ToString(of.Data, offset, OfNameRecordSize);
+            if (string.IsNullOrEmpty(name))
             {
-                throw new ArgumentException($"Unable to read name for team id {Id} from executable.");
+                name = Utils.BytesUTF8ToString(of.Data, offset + OfNameRecordSize, 0x18);
             }
-
-            return Encoding.UTF8.GetString(nameBytes, 0, endIndex);
-
+            return name;
         }
         public uint TeamPlayersOffset()
         {

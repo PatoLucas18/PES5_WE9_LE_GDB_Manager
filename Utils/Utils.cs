@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Linq;
 using System.Windows.Forms;
+using System.Text;
 
 namespace PES5_WE9_LE_GDB_Manager
 {
@@ -44,7 +45,16 @@ namespace PES5_WE9_LE_GDB_Manager
             }
             return colourList;
         }
-
+        public static string BytesUTF8ToString(byte[] data, uint offset, uint len)
+        {
+            string s = Encoding.UTF8.GetString(data, (int)offset, (int)len);
+            int zeroIndex = s.IndexOf('\0');
+            if (zeroIndex != -1)
+            {
+                s = s.Substring(0, zeroIndex);
+            }
+            return s;
+        }
         public static uint ReadUInt32(byte[] data, uint startIndex)
         {
             uint value = (uint)(data[startIndex] | (data[startIndex + 1] << 8) | (data[startIndex + 2] << 16) | (data[startIndex + 3] << 24));
