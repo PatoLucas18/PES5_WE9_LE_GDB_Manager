@@ -119,6 +119,9 @@
     <Compile Include="Classes\SupporterColour.cs" />
     <Compile Include="Classes\Team.cs" />
     <Compile Include="Utils\Utils.cs" />
+    <EmbeddedResource Include="Forms\frmCallnames.resx">
+      <DependentUpon>frmCallnames.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmConfig.resx">
       <DependentUpon>frmConfig.cs</DependentUpon>
     </EmbeddedResource>
