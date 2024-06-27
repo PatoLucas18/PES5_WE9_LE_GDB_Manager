@@ -109,8 +109,6 @@ namespace PES5_WE9_LE_GDB_Manager
             {
                 var serializer = new DataContractJsonSerializer(typeof(GithubApi));
                 GithubApi githubApiResponse = (GithubApi)serializer.ReadObject(responseStream);
-                Console.WriteLine(githubApiResponse.TagName);
-                Console.WriteLine(githubApiResponse.Assets.First().DownloadUrl);
                 return githubApiResponse;
             }
         }
@@ -342,7 +340,6 @@ namespace PES5_WE9_LE_GDB_Manager
 
             // Obtener información del directorio de origen
             DirectoryInfo dir = new DirectoryInfo(sourceDirectory);
-            Console.WriteLine(dir.Name);
             // Obtener todos los archivos del directorio de origen y sus subdirectorios
             FileInfo[] files = dir.GetFiles("*", SearchOption.AllDirectories);
             destDirectory = Path.Combine(destDirectory, dir.Name);
@@ -355,8 +352,6 @@ namespace PES5_WE9_LE_GDB_Manager
             // Copiar todos los archivos y subdirectorios
             foreach (FileInfo file in files)
             {
-                Console.WriteLine(file.FullName);
-                Console.WriteLine(file.FullName.Substring(sourceDirectory.Length + 1));
                 // Crear la ruta completa del archivo de destino
                 string newFilePath = Path.Combine(destDirectory, file.FullName.Substring(sourceDirectory.Length + 1));
 
