@@ -2148,7 +2148,6 @@ namespace PES5_WE9_LE_GDB_Manager
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PES5/WE9/LE GDB Manager";
             this.Load += new System.EventHandler(this.frmMain_Load);
-            this.Resize += new System.EventHandler(this.frmMain_Resize);
             this.mnuMain.ResumeLayout(false);
             this.mnuMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerBoot)).EndInit();

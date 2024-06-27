@@ -1942,12 +1942,5 @@ namespace PES5_WE9_LE_GDB_Manager
     MessageBoxIcon.Information
 );
         }
-
-        private void frmMain_Resize(object sender, EventArgs e)
-        {
-            Console.WriteLine(this.ClientSize.Width);
-            Console.WriteLine(this.ClientSize.Height);
-
-        }
     }
 }
