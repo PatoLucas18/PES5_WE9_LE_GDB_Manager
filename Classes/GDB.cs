@@ -31,7 +31,7 @@ namespace PES5_WE9_LE_GDB_Manager
             teams.Clear();
             for (uint i = 0; i < Team.TotalNations + Team.TotalClubs + Team.ExtraTeams; i++)
             {
-                if (Team.TotalNations <= i && i < Team.TotalClubs)
+                if (Team.TotalNations <= i && i < Team.TotalNations + Team.TotalClubs)
                 {
                     teams.Add(new Team(optionFile, i));
                 }
