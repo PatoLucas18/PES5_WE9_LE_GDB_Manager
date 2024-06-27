@@ -170,7 +170,7 @@ namespace PES5_WE9_LE_GDB_Manager
             using (BinaryReader reader = new BinaryReader(fs))
             {
                 uint magicNumber = reader.ReadUInt32();
-                if (magicNumber != 0x00010600)
+                if (magicNumber != 0x00010600 && magicNumber != 0x00010000)
                 {
                     throw new ArgumentException($"{filePath} is not a zlib file!");
                 }
