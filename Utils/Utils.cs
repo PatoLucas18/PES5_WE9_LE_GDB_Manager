@@ -180,10 +180,15 @@ namespace PES5_WE9_LE_GDB_Manager
                 byte[] compressData = reader.ReadBytes((int)compressSize);
                 byte[] decompressData = new byte[decompressSize];
                 int result = UncompressByteArray(decompressData, ref decompressSize, compressData, compressSize);
-                if (result != 0 && result != -5)
+                if (result < 0)
                 {
-                    throw new Exception($"An error has ocurred while trying to decompress {filePath}");
+                    Console.WriteLine($"Error when trying to decompress {filePath} code error: {result}");
                 }
+                
+                //if (result != 0 && result != -5)
+                //{
+                //    throw new Exception($"An error has ocurred while trying to decompress {filePath}");
+                //}
                 return decompressData;
             }
         }
