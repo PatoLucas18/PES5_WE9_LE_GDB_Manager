@@ -25,6 +25,8 @@ namespace PES5_WE9_LE_GDB_Manager
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
+            panel1.AutoScroll = true;
+            panel1.Dock = DockStyle.Fill;
             // for now we hide this tab pages as they're not ready yet
             tpReferees.Parent = null;
             tpCompetitions.Parent = null;
@@ -378,12 +380,13 @@ namespace PES5_WE9_LE_GDB_Manager
         private void LoadSupportersColoursList()
         {
             List<Color> mainSupporterColors = Utils.GetSupporterColours();
+            cboTeamSuppMainColour.DataSource = null;
             cboTeamSuppMainColour.Items.Clear();
             cboTeamSuppMainColour.DataSource = mainSupporterColors;
             cboTeamSuppMainColour.SelectedItem = null;
 
             List<Color> secSupporterColors = Utils.GetSupporterColours();
-
+            cboTeamSuppSecColour.DataSource = null;
             cboTeamSuppSecColour.Items.Clear();
             cboTeamSuppSecColour.DataSource = secSupporterColors;
             cboTeamSuppSecColour.SelectedItem = null;
@@ -1938,6 +1941,13 @@ namespace PES5_WE9_LE_GDB_Manager
     MessageBoxButtons.OK,
     MessageBoxIcon.Information
 );
+        }
+
+        private void frmMain_Resize(object sender, EventArgs e)
+        {
+            Console.WriteLine(this.ClientSize.Width);
+            Console.WriteLine(this.ClientSize.Height);
+
         }
     }
 }

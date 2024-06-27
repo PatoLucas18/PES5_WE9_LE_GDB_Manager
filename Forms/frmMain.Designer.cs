@@ -205,6 +205,7 @@ namespace PES5_WE9_LE_GDB_Manager
             this.lblRefereeName = new System.Windows.Forms.Label();
             this.lstReferees = new System.Windows.Forms.ListBox();
             this.tpCompetitions = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.mnuMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerBoot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerHair)).BeginInit();
@@ -235,6 +236,7 @@ namespace PES5_WE9_LE_GDB_Manager
             ((System.ComponentModel.ISupportInitialize)(this.picRefereeFace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRefereeWeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRefereeHeight)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mnuMain
@@ -248,7 +250,7 @@ namespace PES5_WE9_LE_GDB_Manager
             this.mnuMain.Name = "mnuMain";
             this.mnuMain.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
             this.mnuMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.mnuMain.Size = new System.Drawing.Size(1005, 24);
+            this.mnuMain.Size = new System.Drawing.Size(1012, 24);
             this.mnuMain.TabIndex = 0;
             this.mnuMain.Text = "menuStrip1";
             // 
@@ -268,14 +270,14 @@ namespace PES5_WE9_LE_GDB_Manager
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveConfigurationToolStripMenuItem
             // 
             this.saveConfigurationToolStripMenuItem.Name = "saveConfigurationToolStripMenuItem";
-            this.saveConfigurationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveConfigurationToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.saveConfigurationToolStripMenuItem.Text = "Save configuration";
             this.saveConfigurationToolStripMenuItem.Click += new System.EventHandler(this.saveConfigurationToolStripMenuItem_Click);
             // 
@@ -289,7 +291,7 @@ namespace PES5_WE9_LE_GDB_Manager
             this.glovesMapToolStripMenuItem,
             this.allMapsToolStripMenuItem});
             this.savePlayerToolStripMenuItem.Name = "savePlayerToolStripMenuItem";
-            this.savePlayerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.savePlayerToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.savePlayerToolStripMenuItem.Text = "Save players";
             // 
             // facesMapToolStripMenuItem
@@ -347,7 +349,7 @@ namespace PES5_WE9_LE_GDB_Manager
             this.callnamesMapToolStripMenuItem,
             this.allMapsToolStripMenuItem1});
             this.saveTeamsToolStripMenuItem.Name = "saveTeamsToolStripMenuItem";
-            this.saveTeamsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveTeamsToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.saveTeamsToolStripMenuItem.Text = "Save teams";
             // 
             // kitsMapToolStripMenuItem
@@ -416,14 +418,14 @@ namespace PES5_WE9_LE_GDB_Manager
             // saveALLToolStripMenuItem
             // 
             this.saveALLToolStripMenuItem.Name = "saveALLToolStripMenuItem";
-            this.saveALLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveALLToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.saveALLToolStripMenuItem.Text = "Save all maps";
             this.saveALLToolStripMenuItem.Click += new System.EventHandler(this.saveALLToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -473,21 +475,21 @@ namespace PES5_WE9_LE_GDB_Manager
             // helpToolStripMenuItem1
             // 
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
             this.helpToolStripMenuItem1.Text = "Help";
             this.helpToolStripMenuItem1.Click += new System.EventHandler(this.helpToolStripMenuItem1_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // searchForUpdatesToolStripMenuItem
             // 
             this.searchForUpdatesToolStripMenuItem.Name = "searchForUpdatesToolStripMenuItem";
-            this.searchForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.searchForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.searchForUpdatesToolStripMenuItem.Text = "Update";
             this.searchForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.searchForUpdatesToolStripMenuItem_Click);
             // 
@@ -690,7 +692,7 @@ namespace PES5_WE9_LE_GDB_Manager
             this.tabMain.Controls.Add(this.tpTeams);
             this.tabMain.Controls.Add(this.tpReferees);
             this.tabMain.Controls.Add(this.tpCompetitions);
-            this.tabMain.Location = new System.Drawing.Point(0, 30);
+            this.tabMain.Location = new System.Drawing.Point(3, 26);
             this.tabMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
@@ -2125,20 +2127,28 @@ namespace PES5_WE9_LE_GDB_Manager
             this.tpCompetitions.TabIndex = 4;
             this.tpCompetitions.Text = "Competitions";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.tabMain);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1005, 755);
+            this.panel1.TabIndex = 6;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1005, 759);
-            this.Controls.Add(this.tabMain);
+            this.ClientSize = new System.Drawing.Size(1012, 762);
             this.Controls.Add(this.mnuMain);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Controls.Add(this.panel1);
             this.MainMenuStrip = this.mnuMain;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PES5/WE9/LE GDB Manager";
             this.Load += new System.EventHandler(this.frmMain_Load);
+            this.Resize += new System.EventHandler(this.frmMain_Resize);
             this.mnuMain.ResumeLayout(false);
             this.mnuMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerBoot)).EndInit();
@@ -2175,6 +2185,7 @@ namespace PES5_WE9_LE_GDB_Manager
             ((System.ComponentModel.ISupportInitialize)(this.picRefereeFace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRefereeWeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRefereeHeight)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2358,6 +2369,7 @@ namespace PES5_WE9_LE_GDB_Manager
         private System.Windows.Forms.ToolStripMenuItem byTeamToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem byNationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem allMapsToolStripMenuItem1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
