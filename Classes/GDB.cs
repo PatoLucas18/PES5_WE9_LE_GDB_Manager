@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 
 namespace PES5_WE9_LE_GDB_Manager
 {
@@ -347,7 +348,7 @@ namespace PES5_WE9_LE_GDB_Manager
             string mapFilePath = GetGDBPath(mapFileName);
 
             using (FileStream fs = new FileStream(mapFilePath, FileMode.Create, FileAccess.Write))
-            using (StreamWriter sw = new StreamWriter(fs))
+            using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
             {
                 DateTime localDate = DateTime.Now;
                 sw.WriteLine(MAP_HEADER);
@@ -386,7 +387,7 @@ namespace PES5_WE9_LE_GDB_Manager
             string mapFilePath = GetGDBPath(mapFileName);
 
             using (FileStream fs = new FileStream(mapFilePath, FileMode.Create, FileAccess.Write))
-            using (StreamWriter sw = new StreamWriter(fs))
+            using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
             {
                 DateTime localDate = DateTime.Now;
                 sw.WriteLine(MAP_HEADER);
