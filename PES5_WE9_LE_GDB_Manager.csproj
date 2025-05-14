@@ -87,6 +87,7 @@
     <Compile Include="Classes\ADX.cs" />
     <Compile Include="Classes\Ball.cs" />
     <Compile Include="Classes\Executable.cs" />
+    <Compile Include="Classes\PESVersion.cs" />
     <Compile Include="Forms\frmCallnames.cs">
       <SubType>Form</SubType>
     </Compile>

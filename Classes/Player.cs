@@ -17,8 +17,8 @@ namespace PES5_WE9_LE_GDB_Manager
         public string CallnameFolder = "";
         public OptionFile optionFile;
         public static readonly uint RecordSize = 124;
-        private static readonly uint BaseOffset = 36872;
-        private static readonly uint EditedBaseOffset = 14044;
+        private static readonly uint BaseOffset = 37116; //36872;
+        private static readonly uint EditedBaseOffset = 14288; //14044;
         public static readonly uint NameSize = 32;
         public static readonly uint ShirtNameSize = 16;
         public static readonly uint FirstEditedIdx = 32768;

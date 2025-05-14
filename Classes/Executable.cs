@@ -20,6 +20,7 @@ namespace PES5_WE9_LE_GDB_Manager
 {
         new uint[] { 0x400000, 0x6e2a70, 0x70a630},
         new uint[] { 0x401a00, 0x6e07a8, 0x707068},
+        new uint[] { 0x400000, 0x7A3160, 0x7A5D08},
 };
         public Executable(string fileLocation) 
         {
@@ -57,6 +58,8 @@ namespace PES5_WE9_LE_GDB_Manager
                     return GameVersion.PES5WE9;
                 case 22793412:
                     return GameVersion.WE9LEK;
+                case 21880832:
+                    return GameVersion.PES6;
                 default:
                     throw new Exception($"Invalid game executable with size {Data.Length}");
             }
@@ -72,6 +75,7 @@ namespace PES5_WE9_LE_GDB_Manager
     enum GameVersion
     {
         PES5WE9,
-        WE9LEK
+        WE9LEK,
+        PES6
     }
 }

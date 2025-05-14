@@ -8,11 +8,11 @@ namespace PES5_WE9_LE_GDB_Manager
     {
         public uint Id;
         public string Name;
-        private readonly uint OfBaseOffset = 803608;
-        private readonly uint OfPlayersInTeamOffset = 664054;
+        private readonly uint OfBaseOffset = 751472; //803608;
+        private readonly uint OfPlayersInTeamOffset = 664372; //664054;
         public static readonly uint TotalNations = 64;
         public static readonly uint TotalClassicTeams = 7;
-        public static readonly uint TotalClubs = 138;
+        public static readonly uint TotalClubs = 140;
         public static readonly uint ExtraTeams = 17;
         public static readonly uint TotalTeams = TotalNations + TotalClubs + ExtraTeams;
         private readonly uint OfNameRecordSize = 49;
@@ -23,7 +23,7 @@ namespace PES5_WE9_LE_GDB_Manager
                 return (uint)(IsNation() ? 23 : 32);
             }
         }
-        private readonly uint OfRecordSize = 140;
+        private readonly uint OfRecordSize = 88; //140;
         public List<Player> Players = new List<Player>();
         public string KitsPath = "";
         public Ball HomeBall;
@@ -90,7 +90,7 @@ namespace PES5_WE9_LE_GDB_Manager
         }
         public uint TeamPlayersOffset()
         {
-            uint shift = IsNation() ? 0 : 92 + Player.TotalEditedPlayers * 2;
+            uint shift = IsNation() ? 0 : 46 + Player.TotalEditedPlayers * 2;
             uint baseOffset = IsNation() ? OfPlayersInTeamOffset : OfPlayersInTeamOffset + TotalNations * 23 * 2;
             uint id = IsNation() ? Id : Id - TotalNations;
             uint offset = baseOffset + id * PlayersInTeam * 2 + shift;
